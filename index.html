@@ -1,0 +1,902 @@
+<!--
+    =========================================================
+    My Order - منصة طلب الطعام المتقدمة
+    =========================================================
+    
+    👨‍💻 Developer: Ibrahim Mohamed
+    📧 Email: ibra7im.engineer@gmail.com
+    📱 Instagram: @ibra7im_mo7amad
+    💼 LinkedIn: Ibrahim Mohamed
+    🌐 Website: https://www.instagram.com/ibra7im_mo7amad?igsh=N3oyZWxubDA2YTYw
+    
+    ✨ Version: 2.0 - Premium Professional Grade
+    ⭐ Quality: 5 Stars
+    🚀 Performance: Optimized for Speed
+    🔐 Security: Enterprise Grade
+    
+    =========================================================
+-->
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!-- Meta Tags الأساسية -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- SEO Tags -->
+    <title>My Order - منصة طلب الطعام الأولى | توصيل سريع وآمن</title>
+    <meta name="description" content="My Order - منصة طلب الطعام الرقمية الأولى. اطلب من أفضل المطاعم، توصيل سريع موثوق، ومكافآت حصرية للعملاء المنتظمين.">
+    <meta name="keywords" content="طلب طعام، توصيل فود، مطاعم، أكل أونلاين، delivery، restaurants">
+    <meta name="author" content="Ibrahim Mohamed - My Order Team">
+    <meta name="theme-color" content="#FF6B35">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="My Order - منصة طلب الطعام الاحترافية">
+    <meta property="og:description" content="اطلب وجبتك من أفضل المطاعم بسهولة وأمان">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1504674900152-b8b3e3640da7?w=1200&h=630">
+    <meta property="og:url" content="https://myorder.app">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https:;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <!-- Apple Mobile Web App -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="My Order">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="screen" crossorigin="anonymous">
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://www.gstatic.com">
+    
+    <!-- Manifest for PWA -->
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo" data-action="navigate" data-target="home">
+                <i class="fa-solid fa-utensils"></i>
+                <span>My Order</span>
+            </div>
+            <ul class="nav-links">
+                <li data-action="navigate" data-target="home">الرئيسية</li>
+                <li data-action="navigate" data-target="menu">المنيو</li>
+                <li data-action="navigate" data-target="orders">📦 طلباتي</li>
+                <li data-action="navigate" data-target="about">عن الموقع</li>
+                <li data-action="navigate" data-target="contact">تواصل معنا</li>
+            </ul>
+            <div class="nav-icons">
+                <div class="cart-icon" data-action="navigate" data-target="cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count">0</span>
+                </div>
+                <!-- Google sign-in button removed per user request -->
+                <div class="user-icon" data-action="navigate" data-target="customer-login-page">
+                    <i class="fa-solid fa-circle-user"></i>
+                </div>
+                <div class="admin-toggle" data-action="navigate" data-target="login">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section id="home-page" class="page active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>اطلب وجبتك بلمسة واحدة من <span>My Order</span></h1>
+                    <p>أفضل المطاعم بين يديك، توصيل سريع، وجودة تليق بك.</p>
+                    <button class="main-btn" data-action="navigate" data-target="menu">ابدأ تصفح المنيو الآن <i class="fa-solid fa-arrow-left"></i></button>
+                </div>
+                <div class="hero-graphic">
+                    <img class="interactive-img" src="https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg" alt="Hero Food" data-fullsrc="https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg" data-caption="Hero Food">
+                </div>
+            </div>
+
+            <div style="margin-top:80px;">
+                <h2 class="section-title">�️ أفضل المنتجات</h2>
+                <div class="search-wrapper" style="margin-bottom:30px;">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" id="homeSearch" placeholder="ابحث عن منتجك المفضل..." onkeyup="searchHomeMenu()">
+                </div>
+                <div class="filter-tabs" style="margin-bottom:30px;">
+                    <button class="tab-btn active" data-action="filter-home" data-category="all">الكل</button>
+                    <button class="tab-btn" data-action="filter-home" data-category="food">🍔 أطعمة</button>
+                    <button class="tab-btn" data-action="filter-home" data-category="drinks">🥤 مشروبات</button>
+                    <button class="tab-btn" data-action="filter-home" data-category="sweets">🍰 حلويات</button>
+                </div>
+                <div id="homeMenuGrid" class="container items-grid"></div>
+                <div style="text-align:center; margin-top:40px;">
+                    <button class="main-btn" data-action="navigate" data-target="menu-page" style="max-width:400px; margin:0 auto; padding:16px 40px;">
+                        عرض كل المنتجات <i class="fa fa-arrow-left"></i>
+                    </button>
+                </div>
+            </div> 
+
+            <div style="margin-top:80px;">
+                <h2 class="section-title">�🏪 فروعنا والعناوين</h2>
+                <div class="branches-row" style="margin-top:40px;">
+                    <div class="branch-card">
+                        <div class="branch-img">
+                            <img class="interactive-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIJ-sXReSok67nDDw0imkkDdSCFZPtAbFA5Q&s" alt="مطعم البيتزا الإيطالي" data-fullsrc="https://images.unsplash.com/photo-1600891964261-cd6b7d9f6f8f?w=1200" data-caption="مطعم البيتزا الإيطالي" onerror="this.onerror=null;this.src='https://via.placeholder.com/600x400?text=No+Image';">
+                        </div>
+                        <h3>🍕 مطعم البيتزا الإيطالي</h3>
+                        <p><i class="fa fa-map-marker"></i> <strong>العنوان:</strong> شارع النيل، القاهرة</p>
+                        <p><i class="fa fa-phone"></i> <strong>الهاتف:</strong> 01001234567</p>
+                        <p><i class="fa fa-clock"></i> <strong>الساعات:</strong> 12:00 - 02:00</p>
+                    </div>
+
+                    <div class="branch-card">
+                        <div class="branch-img">
+                            <img class="interactive-img" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200" alt="برجر بازوكا" data-fullsrc="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200" data-caption="برجر بازوكا" onerror="this.onerror=null;this.src='https://via.placeholder.com/600x400?text=No+Image';">
+                        </div>
+                        <h3>🍔 برجر بازوكا</h3>
+                        <p><i class="fa fa-map-marker"></i> <strong>العنوان:</strong> ميدان التحرير، وسط البلد</p>
+                        <p><i class="fa fa-phone"></i> <strong>الهاتف:</strong> 01012345678</p>
+                        <p><i class="fa fa-clock"></i> <strong>الساعات:</strong> 11:00 - 03:00</p>
+                    </div>
+
+                    <div class="branch-card">
+                        <div class="branch-img">
+                            <img class="interactive-img" src="https://images.unsplash.com/photo-1553621042-f6e147245754?w=1200" alt="مطعم السوشي الياباني" data-fullsrc="https://images.unsplash.com/photo-1553621042-f6e147245754?w=1200" data-caption="مطعم السوشي الياباني" onerror="this.onerror=null;this.src='https://via.placeholder.com/600x400?text=No+Image';">
+                        </div>
+                        <h3>🍱 مطعم السوشي الياباني</h3>
+                        <p><i class="fa fa-map-marker"></i> <strong>العنوان:</strong> الشارقة مول، التجمع الخامس</p>
+                        <p><i class="fa fa-phone"></i> <strong>الهاتف:</strong> 01023456789</p>
+                        <p><i class="fa fa-clock"></i> <strong>الساعات:</strong> 14:00 - 12:00</p>
+                    </div>
+
+                    <div class="branch-card">
+                        <div class="branch-img">
+                            <img class="interactive-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE7wbWL7yM23ASrpOVqlwllQO4JHH47STzwg&s" alt="دجاج ستريت" data-fullsrc="https://images.unsplash.com/photo-1604908177522-8f2f3b0f0a8e?w=1200" data-caption="دجاج ستريت" onerror="this.onerror=null;this.src='https://via.placeholder.com/600x400?text=No+Image';">
+                        </div>
+                        <h3>🍗 دجاج ستريت</h3>
+                        <p><i class="fa fa-map-marker"></i> <strong>العنوان:</strong> شارع قصر النيل</p>
+                        <p><i class="fa fa-phone"></i> <strong>الهاتف:</strong> 01034567890</p>
+                        <p><i class="fa fa-clock"></i> <strong>الساعات:</strong> 12:00 - 02:00</p>
+                    </div>
+
+                   
+
+                    <div class="branch-card">
+                        <div class="branch-img">
+                            <img class="interactive-img" src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=1200" alt="كافيه الفن الحديث" data-fullsrc="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=1200" data-caption="كافيه الفن الحديث" onerror="this.onerror=null;this.src='https://via.placeholder.com/600x400?text=No+Image';">
+                        </div>
+                        <h3>☕ كافيه الفن الحديث</h3>
+                        <p><i class="fa fa-map-marker"></i> <strong>العنوان:</strong> شارع الهرم، الجيزة</p>
+                        <p><i class="fa fa-phone"></i> <strong>الهاتف:</strong> 01056789012</p>
+                        <p><i class="fa fa-clock"></i> <strong>الساعات:</strong> 08:00 - 23:00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu-page" class="page">
+            <div class="container">
+                <h2 class="section-title">قائمة الطعام والمشروبات 🍔</h2>
+                <div class="search-wrapper">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" id="mainSearch" placeholder="عن ماذا تبحث اليوم؟" onkeyup="searchFunction()">
+                </div>
+                <div class="filter-tabs">
+                    <button class="tab-btn active" data-action="filter" data-category="all">الكل</button>
+                    <button class="tab-btn" data-action="filter" data-category="food">أطعمة</button>
+                    <button class="tab-btn" data-action="filter" data-category="drinks">مشروبات</button>
+                    <button class="tab-btn" data-action="filter" data-category="sweets">حلويات</button>
+                </div>
+                <div id="itemsGrid" class="items-grid"></div>
+            </div>
+        </section>
+
+        <section id="about-page" class="page">
+            <div class="container">
+                <h2 class="section-title">من نحن — احترافية في خدمة الطلبات</h2>
+
+                <div class="about-hero" style="margin-top:18px;">
+                    <div class="about-hero-text">
+                        <h3>رؤيتنا</h3>
+                        <p class="lead">نهدف إلى بناء تجربة طلب طعام سريعة، آمنة، وسهلة لكل عميل، مع الالتزام بجودة الأطعمة وسرعة التوصيل.</p>
+
+                        <h4>مهمتنا</h4>
+                        <ul class="about-mission">
+                            <li>ربط العملاء بأفضل المطاعم المحلية بمعايير جودة صارمة.</li>
+                            <li>تقديم واجهة بسيطة وسريعة للطلب والدفع والتتبع.</li>
+                            <li>دعم عملائنا بخدمة فعّالة واستجابة سريعة على مدار الساعة.</li>
+                        </ul>
+
+                        <div style="margin-top:18px; display:flex; gap:12px; align-items:center;">
+                            <button class="main-btn" data-action="navigate" data-target="menu">تصفح المنيو الآن</button>
+                            <a href="#contact-page" class="main-btn" style="background:transparent; color:var(--primary); border:2px solid var(--primary);">تواصل معنا</a>
+                        </div>
+                    </div>
+                    <div class="about-hero-visual">
+                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=1200" alt="خدمة التوصيل الاحترافية" style="width:100%; border-radius:14px; box-shadow:var(--shadow);">
+                    </div>
+                </div>
+
+                <div class="about-metrics" style="margin-top:32px; display:flex; justify-content:center; gap:24px; flex-wrap:wrap;">
+                    <div class="metric">
+                        <strong>10K+</strong>
+                        <span>طلبات يومية</span>
+                    </div>
+                    <div class="metric">
+                        <strong>4.8⭐</strong>
+                        <span>متوسط تقييم العملاء</span>
+                    </div>
+                    <div class="metric">
+                        <strong>20+</strong>
+                        <span>مطاعم شريكة</span>
+                    </div>
+                    <div class="metric">
+                        <strong>99%</strong>
+                        <span>دقة التسليم</span>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:36px;">خدماتنا الأساسية</h3>
+                <div class="features-wrapper" style="margin-top:16px;">
+                    <div class="feature-box">
+                        <div class="icon-circle"><i class="fa-solid fa-bolt"></i></div>
+                        <h3>توصيل فائق السرعة</h3>
+                        <p>شبكة توزيع فعّالة تضمن وصول الطعام ساخناً وفي الوقت المحدد.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="icon-circle"><i class="fa-solid fa-cookie-bite"></i></div>
+                        <h3>اختيار مطاعم موثوقة</h3>
+                        <p>شركاء مختارون بعناية مع مراعاة النظافة وجودة المكونات.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="icon-circle"><i class="fa-solid fa-shield-check"></i></div>
+                        <h3>سياسات أمان وراحة</h3>
+                        <p>طرق دفع آمنة وسياسة إرجاع واضحة ودعم فعّال.</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:36px;">فريق العمل</h3>
+                <div class="team-grid" style="margin-top:16px;">
+                    <div class="team-card">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600" alt="أحمد سامي - المؤسس" />
+                        <h4>أحمد سامي</h4>
+                        <small>المؤسس والرئيس التنفيذي</small>
+                        <div class="team-socials">
+                            <a href="#" target="_blank" aria-label="LinkedIn Ahmed"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" target="_blank" aria-label="Instagram Ahmed"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="https://png.pngtree.com/thumb_back/fw800/background/20230406/pngtree-a-cheerful-female-executive-posing-with-a-smile-while-seated-at-her-work-desk-photo-image_51115806.jpg" alt="ليلى محمود - مديرة العمليات" />
+                        <h4>ليلى محمود</h4>
+                        <small>مديرة العمليات</small>
+                        <div class="team-socials">
+                            <a href="#" target="_blank" aria-label="LinkedIn Leila"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" target="_blank" aria-label="Instagram Leila"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600" alt="محمد علي - رئيس خدمة العملاء" />
+                        <h4>محمد علي</h4>
+                        <small>رئيس خدمة العملاء</small>
+                        <div class="team-socials">
+                            <a href="#" target="_blank" aria-label="LinkedIn Mohamed"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" target="_blank" aria-label="Instagram Mohamed"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align:center; margin-top:36px;">
+                    <p style="color:#666; max-width:900px; margin:0 auto;">نحن نؤمن بأن الطعام الجيد يجمع الناس — ونسعى يومياً لجعل تجربة الطلب سهلة، سريعة، وممتعة لكل عميل.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-page" class="page">
+            <div class="container">
+                <h2 class="section-title">📞 يسعدنا تواصلك معنا</h2>
+                
+                <div class="contact-grid">
+                    <div class="contact-info-card">
+                        <div style="text-align:center; margin-bottom:30px;">
+                            <i class="fa-solid fa-headset" style="font-size:64px; color:var(--primary); margin-bottom:15px;"></i>
+                            <h3 style="font-size:28px; margin:0; color:#2C3E50;">معلومات التواصل</h3>
+                        </div>
+                        
+                        <div style="background:linear-gradient(135deg, rgba(255,107,53,0.05), rgba(255,142,95,0.05)); padding:20px; border-radius:14px; margin-bottom:20px; border-right:4px solid var(--primary);">
+                            <p style="margin:15px 0; font-size:16px; display:flex; align-items:center; gap:12px; color:#2C3E50;">
+                                <i class="fa fa-phone" style="font-size:20px; color:var(--primary);"></i> 
+                                <span><strong>الهاتف:</strong> <span id="contactPhone">01021279663</span></span>
+                            </p>
+                            <p style="margin:15px 0; font-size:16px; display:flex; align-items:center; gap:12px; color:#2C3E50;">
+                                <i class="fa fa-envelope" style="font-size:20px; color:var(--primary);"></i> 
+                                <span><strong>البريد:</strong> ibra7im.engineer@gmail.com</span>
+                            </p>
+                            <p style="margin:15px 0; font-size:16px; display:flex; align-items:center; gap:12px; color:#2C3E50;">
+                                <i class="fa fa-location-dot" style="font-size:20px; color:var(--primary);"></i> 
+                                <span><strong>العنوان:</strong> القاهرة، جمهورية مصر العربية</span>
+                            </p>
+                            <p style="margin:15px 0; font-size:16px; display:flex; align-items:center; gap:12px; color:#2C3E50;">
+                                <i class="fa fa-clock" style="font-size:20px; color:var(--primary);"></i> 
+                                <span><strong>ساعات العمل:</strong> من 10 صباحاً إلى 10 ليلاً يومياً</span>
+                            </p>
+                        </div>
+
+                        <h4 style="margin:25px 0 15px 0; font-size:18px; color:#2C3E50;">تابعنا على وسائل التواصل:</h4>
+                        <div style="display:flex; gap:15px; justify-content:flex-end;">
+                            <a href="https://facebook.com" target="_blank" style="display:flex; align-items:center; justify-content:center; width:50px; height:50px; background:linear-gradient(135deg, #1877f2, #0A66C2); border-radius:50%; color:white; font-size:24px; transition:0.3s;" class="social-link">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="https://wa.me/201021279663" target="_blank" style="display:flex; align-items:center; justify-content:center; width:50px; height:50px; background:linear-gradient(135deg, #25d366, #1BA851); border-radius:50%; color:white; font-size:24px; transition:0.3s;" class="social-link">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" style="display:flex; align-items:center; justify-content:center; width:50px; height:50px; background:linear-gradient(135deg, #e1306c, #C13584); border-radius:50%; color:white; font-size:24px; transition:0.3s;" class="social-link">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="review-box-card">
+                        <div style="text-align:center; margin-bottom:20px;">
+                            <i class="fa-solid fa-star" style="font-size:48px; color:var(--primary); margin-bottom:10px;"></i>
+                            <h3 style="font-size:24px; margin:0; color:#2C3E50;">شاركنا رأيك وتقييمك</h3>
+                            <p style="color:#7F8C8D; margin:5px 0 0 0; font-size:14px;">نقدّر آرائك وملاحظاتك لتحسين الخدمة</p>
+                        </div>
+                        <textarea id="reviewText" placeholder="اكتب تجربتك وآرائك عن My Order هنا... نحن نستمع بكل اهتمام 💬" style="height:160px; padding:16px; border:2px solid #E0E0E0; border-radius:12px; font-size:15px; font-family:inherit; resize:none; transition:0.3s;"></textarea>
+                        <button data-action="send-review" class="main-btn" style="margin-top:12px;">⭐ إرسال التقييم</button>
+                    </div>
+                </div>
+
+                <div style="margin-top:50px;">
+                    <h3 style="text-align:center; font-size:24px; margin-bottom:30px; color:#2C3E50;">
+                        <i class="fa fa-comments" style="color:var(--primary);"></i> التقييمات والآراء
+                    </h3>
+                    <div id="reviewsList" class="reviews-container"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="orders-page" class="page">
+            <div class="container">
+                <h2 class="section-title">📦 سجل طلباتي</h2>
+                
+                <div style="background:linear-gradient(135deg, rgba(52,152,219,0.1), rgba(93,173,226,0.1)); padding:20px; border-radius:12px; margin-bottom:30px; border-left:5px solid #3498DB;">
+                    <p style="margin:0; color:#2C3E50; font-size:15px;">
+                        🔔 هنا تجد سجل كل الطلبات السابقة، يمكنك متابعة الطلبات وإعادة طلب نفس الأصناف بسهولة
+                    </p>
+                </div>
+                
+                <button onclick="loadCustomerOrders()" style="background:linear-gradient(135deg, #3498DB, #2980B9); color:white; border:none; padding:12px 24px; border-radius:8px; cursor:pointer; font-weight:600; margin-bottom:20px; transition:0.3s; box-shadow:0 2px 8px rgba(52,152,219,0.2);">🔄 تحديث السجل</button>
+                
+                <div id="ordersHistoryContainer" style="max-height:900px; overflow-y:auto;"></div>
+            </div>
+        </section>
+
+        <section id="customer-login-page" class="page">
+            <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);">
+                <div style="background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px); border-radius: 24px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4); overflow: hidden; max-width: 520px; width: 100%; animation: slideInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+                    
+                    <!-- Header with gradient -->
+                    <div style="background: linear-gradient(135deg, #FF6B35, #FF8E5F, #FFB347); padding: 50px 30px; text-align: center; color: white; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; animation: float 4s ease-in-out infinite;"></div>
+                        <h1 style="font-size: 36px; font-weight: 900; margin: 0; margin-bottom: 8px; position: relative; z-index: 2;">👥 My Order</h1>
+                        <p style="font-size: 14px; margin: 0; opacity: 0.95; position: relative; z-index: 2; letter-spacing: 0.5px;">منصة طلب الطعام المميزة</p>
+                    </div>
+                    
+                    <!-- Tabs -->
+                    <div style="display: flex; gap: 0; border-bottom: 2px solid #E5E7EB; background: #F9FAFB;">
+                        <button id="customerLoginTab" onclick="switchCustomerTab('login')" style="flex: 1; padding: 18px; background: white; color: #FF6B35; border: none; border-bottom: 3px solid #FF6B35; cursor: pointer; font-weight: 800; font-size: 15px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); letter-spacing: 0.3px;" onmouseover="this.style.background='#F3F4F6'" onmouseout="this.style.background='white'">🔓 دخول</button>
+                        <button id="customerRegisterTab" onclick="switchCustomerTab('register')" style="flex: 1; padding: 18px; background: transparent; color: #6B7280; border: none; border-bottom: 3px solid transparent; cursor: pointer; font-weight: 800; font-size: 15px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); letter-spacing: 0.3px;" onmouseover="this.style.background='#F9FAFB'; this.style.color='#1F2937'" onmouseout="this.style.background='transparent'; this.style.color='#6B7280'">✍️ إنشاء حساب</button>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div style="padding: 45px 35px;">
+                        
+                        <!-- Login Form -->
+                        <form id="customerLoginForm" style="display: block;">
+                            <!-- Email Field -->
+                            <div style="margin-bottom: 24px;">
+                                <label style="display: block; color: #1F2937; font-weight: 700; margin-bottom: 10px; font-size: 14px; letter-spacing: 0.3px;">📧 البريد الإلكتروني</label>
+                                <input type="email" id="customer-email" placeholder="example@email.com" style="width: 100%; padding: 14px 16px; border: 2px solid #E5E7EB; border-radius: 12px; font-size: 14px; font-family: inherit; box-sizing: border-box; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); background: linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 100%);" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 4px rgba(255, 107, 53, 0.1)'" onblur="this.style.borderColor='#E5E7EB'; this.style.boxShadow='none'">
+                            </div>
+                            
+                            <!-- Password Field -->
+                            <div style="margin-bottom: 20px;">
+                                <label style="display: block; color: #1F2937; font-weight: 700; margin-bottom: 10px; font-size: 14px; letter-spacing: 0.3px;">🔑 كلمة المرور</label>
+                                <input type="password" id="customer-password" placeholder="أدخل كلمة مرور آمنة" style="width: 100%; padding: 14px 16px; border: 2px solid #E5E7EB; border-radius: 12px; font-size: 14px; font-family: inherit; box-sizing: border-box; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); background: linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 100%);" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 4px rgba(255, 107, 53, 0.1)'" onblur="this.style.borderColor='#E5E7EB'; this.style.boxShadow='none'">
+                            </div>
+                            
+                            <!-- Remember Me & Forgot Password -->
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; font-size: 13px;">
+                                <label style="display: flex; align-items: center; color: #6B7280; cursor: pointer;">
+                                    <input type="checkbox" style="margin: 0 8px 0 0; cursor: pointer;">
+                                    تذكرني
+                                </label>
+                                <a href="#" style="color: #FF6B35; text-decoration: none; font-weight: 600; transition: color 0.3s;" onmouseover="this.style.color='#E85A1F'" onmouseout="this.style.color='#FF6B35'">هل نسيت كلمة المرور؟</a>
+                            </div>
+                            
+                            <!-- Error Message -->
+                            <div id="customerLoginError" style="color: #FFFFFF; text-align: center; margin-bottom: 20px; display: none; font-weight: 600; background: linear-gradient(135deg, #EF4444, #DC2626); padding: 14px; border-radius: 12px; font-size: 13px; border-right: 4px solid #B91C1C; animation: slideInDown 0.3s ease-out;"></div>
+                            
+                            <!-- Login Button -->
+                            <button type="button" onclick="customerLogin()" style="width: 100%; padding: 16px; background: linear-gradient(135deg, #FF6B35, #FF8E5F); color: white; border: none; border-radius: 12px; cursor: pointer; font-weight: 800; font-size: 15px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3); letter-spacing: 0.5px; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 35px rgba(255, 107, 53, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(255, 107, 53, 0.3)'">✅ تسجيل دخول</button>
+                            
+                            <!-- Register Link -->
+                            <p style="text-align: center; color: #6B7280; margin-top: 20px; font-size: 13px; letter-spacing: 0.3px;">ليس لديك حساب؟ <a onclick="switchCustomerTab('register')" style="color: #FF6B35; font-weight: 700; cursor: pointer; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#E85A1F'" onmouseout="this.style.color='#FF6B35'">أنشئ حساباً جديداً</a></p>
+                        </form>
+                        
+                        <!-- Register Form -->
+                        <form id="customerRegisterForm" style="display: none;">
+                            <!-- Name Field -->
+                            <div style="margin-bottom: 16px;">
+                                <label style="display: block; color: #1F2937; font-weight: 700; margin-bottom: 8px; font-size: 13px; letter-spacing: 0.3px;">👤 الاسم الكامل</label>
+                                <input type="text" id="register-name" placeholder="محمد أحمد" style="width: 100%; padding: 12px 14px; border: 2px solid #E5E7EB; border-radius: 10px; font-size: 13px; font-family: inherit; box-sizing: border-box; transition: all 0.3s;" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 3px rgba(255, 107, 53, 0.08)'" onblur="this.style.borderColor='#E5E7EB'; this.style.boxShadow='none'">
+                            </div>
+                            
+                            <!-- Email Field -->
+                            <div style="margin-bottom: 16px;">
+                                <label style="display: block; color: #1F2937; font-weight: 700; margin-bottom: 8px; font-size: 13px; letter-spacing: 0.3px;">📧 البريد الإلكتروني</label>
+                                <input type="email" id="register-email" placeholder="example@email.com" style="width: 100%; padding: 12px 14px; border: 2px solid #E5E7EB; border-radius: 10px; font-size: 13px; font-family: inherit; box-sizing: border-box; transition: all 0.3s;" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 3px rgba(255, 107, 53, 0.08)'" onblur="this.style.borderColor='#E5E7EB'; this.style.boxShadow='none'">
+                            </div>
+                            
+                            <!-- Phone Field -->
+                            <div style="margin-bottom: 16px;">
+                                <label style="display: block; color: #1F2937; font-weight: 700; margin-bottom: 8px; font-size: 13px; letter-spacing: 0.3px;">📱 رقم الهاتف</label>
+                                <input type="tel" id="register-phone" placeholder="920xxxxxxxx" style="width: 100%; padding: 12px 14px; border: 2px solid #E5E7EB; border-radius: 10px; font-size: 13px; font-family: inherit; box-sizing: border-box; transition: all 0.3s;" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 3px rgba(255, 107, 53, 0.08)'" onblur="this.style.borderColor='#E5E7EB'; this.style.boxShadow='none'">
+                            </div>
+                            
+                            <!-- Password Field -->
+                            <div style="margin-bottom: 16px;">
+                                <label style="display: block; color: #1F2937; font-weight: 700; margin-bottom: 8px; font-size: 13px; letter-spacing: 0.3px;">🔑 كلمة المرور</label>
+                                <input type="password" id="register-password" placeholder="اختر كلمة مرور قوية" style="width: 100%; padding: 12px 14px; border: 2px solid #E5E7EB; border-radius: 10px; font-size: 13px; font-family: inherit; box-sizing: border-box; transition: all 0.3s;" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 3px rgba(255, 107, 53, 0.08)'" onblur="this.style.borderColor='#E5E7EB'; this.style.boxShadow='none'">
+                            </div>
+                            
+                            <!-- Confirm Password Field -->
+                            <div style="margin-bottom: 18px;">
+                                <label style="display: block; color: #1F2937; font-weight: 700; margin-bottom: 8px; font-size: 13px; letter-spacing: 0.3px;">🔐 تأكيد كلمة المرور</label>
+                                <input type="password" id="register-confirm-password" placeholder="أدخل كلمة المرور مرة أخرى" style="width: 100%; padding: 12px 14px; border: 2px solid #E5E7EB; border-radius: 10px; font-size: 13px; font-family: inherit; box-sizing: border-box; transition: all 0.3s;" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 3px rgba(255, 107, 53, 0.08)'" onblur="this.style.borderColor='#E5E7EB'; this.style.boxShadow='none'">
+                            </div>
+                            
+                            <!-- Error Message -->
+                            <div id="customerRegisterError" style="color: #FFFFFF; text-align: center; margin-bottom: 18px; display: none; font-weight: 600; background: linear-gradient(135deg, #EF4444, #DC2626); padding: 12px; border-radius: 10px; font-size: 12px; border-right: 4px solid #B91C1C; animation: slideInDown 0.3s ease-out;"></div>
+                            
+                            <!-- Register Button -->
+                            <button type="button" onclick="customerRegister()" style="width: 100%; padding: 15px; background: linear-gradient(135deg, #27AE60, #229954); color: white; border: none; border-radius: 12px; cursor: pointer; font-weight: 800; font-size: 14px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3); letter-spacing: 0.5px;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 35px rgba(39, 174, 96, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(39, 174, 96, 0.3)'">✅ إنشاء حساب</button>
+                            
+                            <!-- Login Link -->
+                            <p style="text-align: center; color: #6B7280; margin-top: 16px; font-size: 12px; letter-spacing: 0.3px;">لديك حساب بالفعل؟ <a onclick="switchCustomerTab('login')" style="color: #FF6B35; font-weight: 700; cursor: pointer; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#E85A1F'" onmouseout="this.style.color='#FF6B35'">تسجيل دخول</a></p>
+                        </form>
+                    </div>
+                    
+                    <!-- Footer -->
+                    <div style="background: linear-gradient(135deg, #F9FAFB, #F3F4F6); padding: 20px 35px; border-top: 1px solid #E5E7EB; text-align: center;">
+                        <p style="font-size: 12px; color: #6B7280; margin: 0; letter-spacing: 0.3px;">💳 <strong>آمن وموثوق</strong> | 🔐 <strong>بيانات محمية</strong> | ⚡ <strong>سريع</strong></p>
+                    </div>
+                </div>
+                
+                <!-- Added CSS Animations -->
+                <style>
+                    @keyframes slideInUp {
+                        from {
+                            opacity: 0;
+                            transform: translateY(30px);
+                        }
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+                    @keyframes slideInDown {
+                        from {
+                            opacity: 0;
+                            transform: translateY(-20px);
+                        }
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+                    @keyframes float {
+                        0%, 100% { transform: translateY(0px); }
+                        50% { transform: translateY(-20px); }
+                    }
+                </style>
+            </div>
+        </section>
+
+        <section id="login-page" class="page">
+            <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+                <div style="background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px); border-radius: 24px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4); overflow: hidden; max-width: 450px; width: 100%; animation: slideInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+                    
+                    <!-- Header -->
+                    <div style="background: linear-gradient(135deg, #FF6B35, #FF8E5F, #FFB347); padding: 50px 30px; text-align: center; color: white; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; animation: float 4s ease-in-out infinite;"></div>
+                        <h1 style="font-size: 36px; font-weight: 900; margin: 0; margin-bottom: 8px; position: relative; z-index: 2;">🔐 My Order</h1>
+                        <p style="font-size: 14px; margin: 0; opacity: 0.95; position: relative; z-index: 2; letter-spacing: 0.5px;">لوحة التحكم الاحترافية</p>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div style="padding: 50px 35px;">
+                        <form id="loginForm" novalidate>
+                            <!-- Username Field -->
+                            <div style="margin-bottom: 28px; position: relative;">
+                                <label for="admin-username" style="display: block; color: #1F2937; font-weight: 700; margin-bottom: 12px; font-size: 14px; letter-spacing: 0.3px;">👤 اسم المستخدم</label>
+                                <div style="position: relative;">
+                                    <input type="text" id="admin-username" placeholder="أدخل اسم المستخدم" style="width: 100%; padding: 14px 16px; border: 2px solid #E5E7EB; border-radius: 12px; font-size: 14px; font-family: inherit; box-sizing: border-box; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); background: linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 100%);" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 4px rgba(255, 107, 53, 0.1)';" onblur="this.style.borderColor='#E5E7EB'; this.style.boxShadow='none';">
+                                    <i style="position: absolute; right: 14px; top: 14px; color: #9CA3AF; pointer-events: none;"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- Password Field -->
+                            <div style="margin-bottom: 28px; position: relative;">
+                                <label for="admin-password" style="display: block; color: #1F2937; font-weight: 700; margin-bottom: 12px; font-size: 14px; letter-spacing: 0.3px;">🔑 كلمة المرور</label>
+                                <div style="position: relative;">
+                                    <input type="password" id="admin-password" placeholder="أدخل كلمة المرور" style="width: 100%; padding: 14px 16px; border: 2px solid #E5E7EB; border-radius: 12px; font-size: 14px; font-family: inherit; box-sizing: border-box; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); background: linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 100%);" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 4px rgba(255, 107, 53, 0.1)';" onblur="this.style.borderColor='#E5E7EB'; this.style.boxShadow='none';">
+                                </div>
+                            </div>
+                            
+                            <!-- Remember Me & Forgot Password -->
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; font-size: 13px;">
+                                <label style="display: flex; align-items: center; color: #6B7280; cursor: pointer;">
+                                    <input type="checkbox" style="margin: 0 8px 0 0; cursor: pointer;">
+                                    تذكرني
+                                </label>
+                                <a href="#" style="color: #FF6B35; text-decoration: none; font-weight: 600; transition: color 0.3s;" onmouseover="this.style.color='#E85A1F'" onmouseout="this.style.color='#FF6B35'">هل نسيت كلمة المرور؟</a>
+                            </div>
+                            
+                            <!-- Error Message -->
+                            <div id="loginError" style="color: #FFFFFF; text-align: center; margin-bottom: 20px; display: none; font-weight: 600; background: linear-gradient(135deg, #EF4444, #DC2626); padding: 14px; border-radius: 12px; font-size: 13px; border-left: 4px solid #B91C1C; animation: slideInDown 0.3s ease-out;"></div>
+                            
+                            <!-- Login Button -->
+                            <button type="button" data-action="validate-login" style="width: 100%; padding: 16px; background: linear-gradient(135deg, #FF6B35, #FF8E5F); color: white; border: none; border-radius: 12px; cursor: pointer; font-weight: 800; font-size: 15px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3); letter-spacing: 0.5px; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 35px rgba(255, 107, 53, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(255, 107, 53, 0.3)'">✅ تسجيل الدخول</button>
+                        </form>
+                    </div>
+                    
+                    <!-- Footer Info -->
+                    <div style="background: linear-gradient(135deg, #F9FAFB, #F3F4F6); padding: 20px 35px; border-top: 1px solid #E5E7EB; text-align: center;">
+                        <p style="font-size: 12px; color: #6B7280; margin: 0; letter-spacing: 0.3px;">🔐 <strong>آمن 100%</strong> | 🛡️ <strong>مشفّر</strong> | ⚡ <strong>سريع</strong></p>
+                    </div>
+                </div>
+                
+                <!-- Added CSS Animations -->
+                <style>
+                    @keyframes slideInUp {
+                        from {
+                            opacity: 0;
+                            transform: translateY(30px);
+                        }
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+                    @keyframes slideInDown {
+                        from {
+                            opacity: 0;
+                            transform: translateY(-20px);
+                        }
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+                    @keyframes float {
+                        0%, 100% { transform: translateY(0px); }
+                        50% { transform: translateY(-20px); }
+                    }
+                </style>
+            </div>
+        </section>
+
+        <section id="cart-page" class="page">
+            <div class="container">
+                <h2 class="section-title">🛒 سلة المشتريات</h2>
+                
+                <!-- خطوات العملية -->
+                <div style="display:flex; justify-content:space-around; margin-bottom:50px; flex-wrap:wrap; gap:20px; max-width:900px; margin-left:auto; margin-right:auto;">
+                    <div style="text-align:center; flex:1; min-width:150px;">
+                        <div style="width:50px; height:50px; background:linear-gradient(135deg, #FF6B35, #FF8E5F); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 10px; color:white; font-weight:bold; font-size:20px;">1</div>
+                        <p style="font-weight:600; color:#2C3E50;">تحديد المنتجات</p>
+                    </div>
+                    <div style="flex:0.5; display:flex; align-items:center; color:#BDC3C7;"><i class="fa fa-arrow-left" style="font-size:24px;"></i></div>
+                    <div style="text-align:center; flex:1; min-width:150px;">
+                        <div style="width:50px; height:50px; background:linear-gradient(135deg, #FF6B35, #FF8E5F); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 10px; color:white; font-weight:bold; font-size:20px;">2</div>
+                        <p style="font-weight:600; color:#2C3E50;">ملء البيانات</p>
+                    </div>
+                    <div style="flex:0.5; display:flex; align-items:center; color:#BDC3C7;"><i class="fa fa-arrow-left" style="font-size:24px;"></i></div>
+                    <div style="text-align:center; flex:1; min-width:150px;">
+                        <div style="width:50px; height:50px; background:linear-gradient(135deg, #FF6B35, #FF8E5F); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 10px; color:white; font-weight:bold; font-size:20px;">3</div>
+                        <p style="font-weight:600; color:#2C3E50;">تأكيد الطلب</p>
+                    </div>
+                </div>
+
+                <!-- قائمة المنتجات -->
+                <div style="background:white; border-radius:16px; padding:30px; box-shadow:0 8px 24px rgba(0,0,0,0.12); margin-bottom:30px;">
+                    <h3 style="margin-bottom:25px; color:#2C3E50; font-size:20px; font-weight:700; display:flex; align-items:center; gap:10px;">
+                        <i class="fa fa-list"></i> قائمة الطلبات
+                    </h3>
+                    <div id="cartItemsList" class="cart-items"></div>
+                </div>
+
+                <!-- نموذج البيانات والدفع -->
+                <div class="cart-checkout">
+                    <!-- نموذج البيانات -->
+                    <div class="billing-info" style="background:white; padding:20px; border-radius:16px; box-shadow:0 8px 24px rgba(0,0,0,0.12); margin-bottom:20px;">
+                        <h3 style="display:flex; align-items:center; gap:10px; margin-bottom:25px; color:#FF6B35; font-size:20px; font-weight:700;">
+                            <i class="fa fa-user-circle"></i> بيانات التوصيل
+                        </h3>
+                        
+                        <div style="margin-bottom:20px;">
+                            <label style="display:block; margin-bottom:8px; font-weight:600; color:#2C3E50; font-size:15px;">👤 الاسم الكامل</label>
+                            <input type="text" id="userName" placeholder="أدخل اسمك بالكامل" style="width:100% !important; padding:12px !important; font-size:16px !important;">
+                        </div>
+
+                        <div style="margin-bottom:20px;">
+                            <label style="display:block; margin-bottom:8px; font-weight:600; color:#2C3E50; font-size:15px;">📍 عنوان التوصيل</label>
+                            <input type="text" id="userAddress" placeholder="شارع... حي... المدينة..." style="width:100% !important; padding:12px !important; font-size:16px !important;">
+                        </div>
+
+                        <div style="margin-bottom:20px;">
+                            <label style="display:block; margin-bottom:8px; font-weight:600; color:#2C3E50; font-size:15px;">📱 رقم الهاتف</label>
+                            <input type="tel" id="userPhone" placeholder="01xxxxxxxxx" style="width:100% !important; padding:12px !important; font-size:16px !important;">
+                        </div>
+
+                        <div style="background:linear-gradient(135deg, rgba(255,107,53,0.05), rgba(255,142,95,0.05)); padding:15px; border-radius:12px; border-right:3px solid #FF6B35; margin-top:25px;">
+                            <p style="font-size:13px; color:#7F8C8D; margin:0;"><i class="fa fa-info-circle"></i> <strong>ملاحظة:</strong> تأكد من صحة البيانات قبل التأكيد</p>
+                        </div>
+                    </div>
+
+                    <!-- ملخص الطلب والدفع -->
+                    <div class="order-summary-box">
+                        <div style="background:linear-gradient(135deg, #FF6B35, #FF8E5F); border-radius:16px; padding:20px; color:white; box-shadow:0 12px 32px rgba(255,107,53,0.3);">
+                            <h3 style="margin-bottom:25px; font-size:20px; font-weight:700; display:flex; align-items:center; gap:10px;">
+                                <i class="fa fa-receipt"></i> ملخص الطلب
+                            </h3>
+
+                            <div id="orderSummary" style="margin-bottom:20px; max-height:300px; overflow-y:auto; padding-bottom:15px; border-bottom:2px solid rgba(255,255,255,0.3); font-size:14px;">
+                            </div>
+
+                            <div style="margin-bottom:15px; padding-bottom:15px; border-bottom:2px solid rgba(255,255,255,0.3);">
+                                <div style="display:flex; justify-content:space-between; margin-bottom:10px; font-size:14px;">
+                                    <span>المجموع الجزئي:</span>
+                                    <span id="subtotalPrice">0</span>
+                                </div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:10px; font-size:14px;">
+                                    <span>رسوم التوصيل:</span>
+                                    <span id="shippingPrice">20 ج.م</span>
+                                </div>
+                            </div>
+
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:25px; font-size:16px; font-weight:bold;">
+                                <span>الإجمالي النهائي:</span>
+                                <span style="font-size:22px;"><span id="totalPrice">0</span> ج.م</span>
+                            </div>
+
+                            <button class="confirm-btn" data-action="finish-order" style="width:100%; padding:14px !important; font-size:15px !important; font-weight:700; display:flex; align-items:center; justify-content:center; gap:10px;">
+                                <i class="fa-brands fa-whatsapp" style="font-size:18px;"></i> أكمل عبر واتساب
+                            </button>
+
+                            <p style="font-size:12px; color:rgba(255,255,255,0.8); margin-top:15px; text-align:center; margin-bottom:0;">
+                                <i class="fa fa-lock"></i> معاملتك آمنة وسرية
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="admin-page" class="page">
+            <style>
+                @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+                @keyframes slideInLeft { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+                @keyframes slideInRight { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+                .admin-container { animation: fadeIn 0.4s ease-in; }
+                .stat-card { animation: slideInLeft 0.5s ease-out; }
+                .admin-card { animation: slideInRight 0.5s ease-out; }
+            </style>
+
+            <div class="admin-container">
+                <!-- Header Section -->
+                <div style="background: linear-gradient(135deg, #FF6B35, #FF8E5F, #FFB347); padding: 40px; border-radius: 20px; margin-bottom: 40px; color: white; position: relative; overflow: hidden; box-shadow: 0 15px 40px rgba(255, 107, 53, 0.2);">
+                    <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; animation: float 4s ease-in-out infinite;"></div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; gap: 20px; position: relative; z-index: 2; flex-wrap: wrap;">
+                        <div>
+                            <h1 style="font-size: 32px; font-weight: 900; margin: 0; margin-bottom: 8px;">🛠️ لوحة التحكم الاحترافية</h1>
+                            <p style="font-size: 14px; margin: 0; opacity: 0.95; letter-spacing: 0.5px;">مرحباً في لوحة إدارة المطعم</p>
+                        </div>
+                        <button data-action="logout" style="background: rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); color: white; padding: 14px 28px; border: 2px solid rgba(255, 255, 255, 0.5); border-radius: 12px; cursor: pointer; font-weight: 800; font-size: 15px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); letter-spacing: 0.3px;" onmouseover="this.style.background='rgba(255, 255, 255, 0.4)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 25px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.3)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.1)'">🚪 تسجيل خروج</button>
+                    </div>
+                </div>
+
+                <!-- Statistics Section -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 40px;">
+                    <div class="stat-card" style="background: linear-gradient(135deg, #667EEA, #764BA2); padding: 24px; border-radius: 16px; color: white; box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 35px rgba(102, 126, 234, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(102, 126, 234, 0.2)'">
+                        <p style="font-size: 13px; margin: 0 0 10px 0; opacity: 0.9; letter-spacing: 0.3px;">📦 إجمالي الطلبات</p>
+                        <h3 id="totalOrdersCount" style="font-size: 32px; font-weight: 900; margin: 0;">0</h3>
+                        <div style="height: 4px; background: rgba(255,255,255,0.3); border-radius: 2px; margin-top: 12px;"><div style="height: 100%; width: 75%; background: #4ECDC4; border-radius: 2px;"></div></div>
+                    </div>
+
+                    <div class="stat-card" style="background: linear-gradient(135deg, #F093FB, #F5576C); padding: 24px; border-radius: 16px; color: white; box-shadow: 0 8px 25px rgba(245, 87, 108, 0.2); transition: all 0.3s; animation-delay: 0.1s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 35px rgba(245, 87, 108, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(245, 87, 108, 0.2)'">
+                        <p style="font-size: 13px; margin: 0 0 10px 0; opacity: 0.9; letter-spacing: 0.3px;">💰 الإيرادات اليومية</p>
+                        <h3 id="dailyRevenueCount" style="font-size: 28px; font-weight: 900; margin: 0;">0 ج.م</h3>
+                        <div style="height: 4px; background: rgba(255,255,255,0.3); border-radius: 2px; margin-top: 12px;"><div style="height: 100%; width: 60%; background: #20C997; border-radius: 2px;"></div></div>
+                    </div>
+
+                    <div class="stat-card" style="background: linear-gradient(135deg, #4FACFE, #00F2FE); padding: 24px; border-radius: 16px; color: white; box-shadow: 0 8px 25px rgba(79, 172, 254, 0.2); transition: all 0.3s; animation-delay: 0.2s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 35px rgba(79, 172, 254, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(79, 172, 254, 0.2)'">
+                        <p style="font-size: 13px; margin: 0 0 10px 0; opacity: 0.9; letter-spacing: 0.3px;">👥 إجمالي العملاء</p>
+                        <h3 id="totalCustomersCount" style="font-size: 32px; font-weight: 900; margin: 0;">0</h3>
+                        <div style="height: 4px; background: rgba(255,255,255,0.3); border-radius: 2px; margin-top: 12px;"><div style="height: 100%; width: 45%; background: #FF6B6B; border-radius: 2px;"></div></div>
+                    </div>
+
+                    <div class="stat-card" style="background: linear-gradient(135deg, #43E97B, #38F9D7); padding: 24px; border-radius: 16px; color: white; box-shadow: 0 8px 25px rgba(67, 233, 123, 0.2); transition: all 0.3s; animation-delay: 0.3s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 35px rgba(67, 233, 123, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(67, 233, 123, 0.2)'">
+                        <p style="font-size: 13px; margin: 0 0 10px 0; opacity: 0.9; letter-spacing: 0.3px;">🍽️ إجمالي الأصناف</p>
+                        <h3 id="totalItemsCount" style="font-size: 32px; font-weight: 900; margin: 0;">0</h3>
+                        <div style="height: 4px; background: rgba(255,255,255,0.3); border-radius: 2px; margin-top: 12px;"><div style="height: 100%; width: 85%; background: #FFD93D; border-radius: 2px;"></div></div>
+                    </div>
+                </div>
+
+                <!-- Tabs Navigation -->
+                <div style="display: flex; gap: 12px; margin-bottom: 30px; border-bottom: 2px solid #E5E7EB; padding-bottom: 0; flex-wrap: wrap;">
+                    <button id="adminTabItems" onclick="switchAdminTab('items')" style="background: linear-gradient(135deg, #FF6B35, #FF8E5F); color: white; border: none; padding: 14px 28px; border-radius: 12px 12px 0 0; cursor: pointer; font-weight: 800; font-size: 15px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 -4px 15px rgba(255, 107, 53, 0.2); letter-spacing: 0.3px;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">📝 إدارة الأصناف</button>
+                    <button id="adminTabOrders" onclick="switchAdminTab('orders')" style="background: transparent; color: #6B7280; border: none; padding: 14px 28px; border-radius: 0; cursor: pointer; font-weight: 800; font-size: 15px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); letter-spacing: 0.3px;" onmouseover="this.style.color='#1F2937'; this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.color='#6B7280'; this.style.background='transparent'">📦 إدارة الطلبات</button>
+                </div>
+
+                <!-- Items Management Tab -->
+                <div id="adminTabItemsContent" style="display: block;">
+                    <!-- Add Item Form Card -->
+                    <div class="admin-card" style="background: white; border-radius: 16px; padding: 30px; margin-bottom: 30px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); border: 1px solid #E5E7EB;">
+                        <h3 style="font-size: 20px; font-weight: 900; margin: 0 0 24px 0; color: #1F2937; letter-spacing: 0.3px;">➕ إضافة صنف جديد</h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-bottom: 20px;">
+                            <input type="text" id="newItemName" placeholder="اسم الوجبة" style="padding: 12px 16px; border: 2px solid #E5E7EB; border-radius: 10px; font-size: 14px; font-family: inherit; box-sizing: border-box; transition: all 0.3s;" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 4px rgba(255, 107, 53, 0.1)'" onblur="this.style.borderColor='#E5E7EB'; this.style.boxShadow='none'">
+                            
+                            <input type="number" id="newItemPrice" placeholder="السعر (ج.م)" style="padding: 12px 16px; border: 2px solid #E5E7EB; border-radius: 10px; font-size: 14px; font-family: inherit; box-sizing: border-box; transition: all 0.3s;" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 4px rgba(255, 107, 53, 0.1)'" onblur="this.style.borderColor='#E5E7EB'; this.style.boxShadow='none'">
+                            
+                            <select id="newItemCat" style="padding: 12px 16px; border: 2px solid #E5E7EB; border-radius: 10px; font-size: 14px; font-family: inherit; box-sizing: border-box; background: white; transition: all 0.3s; cursor: pointer;" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 4px rgba(255, 107, 53, 0.1)'" onblur="this.style.borderColor='#E5E7EB'; this.style.boxShadow='none'">
+                                <option value="food">🍔 أطعمة</option>
+                                <option value="drinks">🥤 مشروبات</option>
+                                <option value="sweets">🍰 حلويات</option>
+                            </select>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-bottom: 20px;">
+                            <input type="text" id="newItemImg" placeholder="رابط الصورة (URL)" style="padding: 12px 16px; border: 2px solid #E5E7EB; border-radius: 10px; font-size: 14px; font-family: inherit; box-sizing: border-box; transition: all 0.3s;" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 4px rgba(255, 107, 53, 0.1)'" onblur="this.style.borderColor='#E5E7EB'; this.style.boxShadow='none'">
+                            
+                            <input type="file" id="newItemFile" accept="image/*" style="padding: 12px 16px; border: 2px dashed #E5E7EB; border-radius: 10px; font-size: 13px; font-family: inherit; box-sizing: border-box; cursor: pointer; transition: all 0.3s;" onfocus="this.style.borderColor='#FF6B35'" onblur="this.style.borderColor='#E5E7EB'">
+                        </div>
+
+                        <button data-action="add-new-item" style="width: 100%; padding: 14px; background: linear-gradient(135deg, #FF6B35, #FF8E5F); color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: 800; font-size: 15px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3); letter-spacing: 0.5px;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 35px rgba(255, 107, 53, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(255, 107, 53, 0.3)'">✨ إضافة الآن</button>
+                    </div>
+
+                    <!-- Settings Card -->
+                    <div style="background: white; border-radius: 16px; padding: 30px; margin-bottom: 30px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); border: 1px solid #E5E7EB;">
+                        <h3 style="font-size: 20px; font-weight: 900; margin: 0 0 24px 0; color: #1F2937; letter-spacing: 0.3px;">📱 إعدادات المطعم</h3>
+                        
+                        <label style="display: block; margin-bottom: 12px; font-weight: 700; color: #1F2937; font-size: 14px; letter-spacing: 0.3px;">رقم الواتساب الخاص بالمطعم:</label>
+                        <div style="display: flex; gap: 12px; margin-bottom: 16px;">
+                            <input type="text" id="restaurantPhoneInput" placeholder="201xxxxxxxxx" style="flex: 1; padding: 12px 16px; border: 2px solid #E5E7EB; border-radius: 10px; font-size: 14px; font-family: inherit; box-sizing: border-box; transition: all 0.3s;" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 4px rgba(255, 107, 53, 0.1)'" onblur="this.style.borderColor='#E5E7EB'; this.style.boxShadow='none'">
+                            <button data-action="update-phone" style="padding: 12px 28px; background: linear-gradient(135deg, #27AE60, #229954); color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: 800; font-size: 14px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3); letter-spacing: 0.3px;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(39, 174, 96, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(39, 174, 96, 0.3)'">💾 حفظ</button>
+                        </div>
+                        <p style="font-size: 12px; color: #6B7280; margin: 0 0 16px 0;">رقم الهاتف الحالي: <strong style="color: #FF6B35;" id="currentPhoneDisplay">201021279663</strong></p>
+
+                        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; padding-top: 20px; border-top: 2px solid #E5E7EB;">
+                            <button data-action="seed" style="padding: 12px 24px; background: linear-gradient(135deg, #6C5CE7, #8E7EF6); color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: 800; font-size: 14px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3); letter-spacing: 0.3px;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(108, 92, 231, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(108, 92, 231, 0.3)'">🧪 بيانات تجريبية</button>
+                            <button data-action="clear-all" style="padding: 12px 24px; background: linear-gradient(135deg, #E74C3C, #C0392B); color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: 800; font-size: 14px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); letter-spacing: 0.3px;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(231, 76, 60, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(231, 76, 60, 0.3)'">🧹 مسح الأصناف</button>
+                        </div>
+                    </div>
+
+                    <!-- Current Items Management Card -->
+                    <div style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); border: 1px solid #E5E7EB;">
+                        <h3 style="font-size: 20px; font-weight: 900; margin: 0 0 24px 0; color: #1F2937; letter-spacing: 0.3px;">📝 إدارة الأصناف</h3>
+                        <div id="adminItemsList" style="max-height: 800px; overflow-y: auto; padding-right: 10px;"></div>
+                    </div>
+                </div>
+
+                <!-- Orders Management Tab -->
+                <div id="adminTabOrdersContent" style="display: none;">
+                    <div style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.08), rgba(255, 142, 95, 0.08)); padding: 24px; border-radius: 16px; margin-bottom: 24px; border-left: 5px solid #FF6B35; border: 2px solid #FFE8DB;">
+                        <h3 style="margin: 0 0 12px 0; color: #1F2937; font-size: 18px; font-weight: 900; letter-spacing: 0.3px;">📦 إدارة طلبات العملاء</h3>
+                        <p style="margin: 0; color: #6B7280; font-size: 14px;">🔔 جميع الطلبات المستقبلة من العملاء، مع إمكانية إعادة إرسالها للمطعم وتتبع حالتها</p>
+                    </div>
+
+                    <div style="display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap;">
+                        <button onclick="renderAllOrders()" style="padding: 14px 28px; background: linear-gradient(135deg, #27AE60, #229954); color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: 800; font-size: 15px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3); letter-spacing: 0.5px;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 35px rgba(39, 174, 96, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(39, 174, 96, 0.3)'">🔄 تحديث قائمة الطلبات</button>
+                    </div>
+
+                    <div id="ordersListContainer" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px;"></div>
+                </div>
+            </div>
+        </section>
+    <footer style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 40px 20px; margin-top: 60px; border-top: 2px solid rgba(255, 107, 53, 0.3);">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+            <!-- Brand Section -->
+            <div>
+                <h3 style="font-size: 22px; font-weight: 900; margin: 0 0 16px 0; background: linear-gradient(135deg, #FF6B35, #FFB347); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">🍽️ My Order</h3>
+                <p style="font-size: 13px; color: rgba(255, 255, 255, 0.7); margin: 0 0 12px 0; line-height: 1.6;">منصة طلب الطعام الحديثة والموثوقة التي تجمع بين الجودة والسرعة والأمان.</p>
+                <div style="display: flex; gap: 12px; margin-top: 12px;">
+                    <a href="https://www.instagram.com/ibra7im_mo7amad?igsh=N3oyZWxubDA2YTYw" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255, 107, 53, 0.2); border-radius: 8px; color: #FF6B35; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='rgba(255, 107, 53, 0.4)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(255, 107, 53, 0.2)'; this.style.transform='translateY(0)'">f</a>
+                    <a href="#" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255, 107, 53, 0.2); border-radius: 8px; color: #FF6B35; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='rgba(255, 107, 53, 0.4)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(255, 107, 53, 0.2)'; this.style.transform='translateY(0)'">tw</a>
+                    <a href="https://www.instagram.com/ibra7im_mo7amad?igsh=N3oyZWxubDA2YTYw" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255, 107, 53, 0.2); border-radius: 8px; color: #FF6B35; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='rgba(255, 107, 53, 0.4)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(255, 107, 53, 0.2)'; this.style.transform='translateY(0)'">ig</a>
+                    <a href="https://www.linkedin.com/in/ibra7im-mo7amed?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255, 107, 53, 0.2); border-radius: 8px; color: #FF6B35; text-decoration: none; transition: all 0.3s; font-weight: 600; font-size: 14px;" onmouseover="this.style.background='rgba(255, 107, 53, 0.4)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(255, 107, 53, 0.2)'; this.style.transform='translateY(0)'">in</a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 style="font-size: 15px; font-weight: 900; margin: 0 0 16px 0; color: white; letter-spacing: 0.3px;">روابط سريعة</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 10px;"><a href="javascript:window.scrollTo({top: 0, behavior: 'smooth'});" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 13px; transition: color 0.3s; cursor: pointer;" onmouseover="this.style.color='#FF6B35'" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)'">🏠 عن المنصة</a></li>
+                    <li style="margin-bottom: 10px;"><a href="javascript:showTermsOfService();" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 13px; transition: color 0.3s; cursor: pointer;" onmouseover="this.style.color='#FF6B35'" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)'">📋 شروط الاستخدام</a></li>
+                    <li style="margin-bottom: 10px;"><a href="javascript:showPrivacyPolicy();" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 13px; transition: color 0.3s; cursor: pointer;" onmouseover="this.style.color='#FF6B35'" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)'">🔐 سياسة الخصوصية</a></li>
+                    <li><a href="javascript:document.querySelector('[data-action=contact-section]')?.scrollIntoView({behavior: 'smooth'}) || document.getElementById('admin-page')?.parentElement?.scrollIntoView({behavior: 'smooth'});" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 13px; transition: color 0.3s; cursor: pointer;" onmouseover="this.style.color='#FF6B35'" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)'">💬 تواصل معنا</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h4 style="font-size: 15px; font-weight: 900; margin: 0 0 16px 0; color: white; letter-spacing: 0.3px;">تواصل معنا</h4>
+                <div style="font-size: 13px; color: rgba(255, 255, 255, 0.7); line-height: 1.8;">
+                    <p style="margin: 0 0 10px 0;">📧 Email: <span style="color: #FF6B35;"><a href="mailto:ibra7im.engineer@gmail.com" style="color: #FF6B35; text-decoration: none;">ibra7im.engineer@gmail.com</a></span></p>
+                    <p style="margin: 0 0 10px 0;">📱 Phone: <span style="color: #FF6B35;">+20 101 2127 9663</span></p>
+                    <p style="margin: 0;">💬 WhatsApp: <span style="color: #FF6B35;">+20 101 2127 9663</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 40px 0; max-width: 1200px; margin-left: auto; margin-right: auto;"></div>
+
+        <!-- Bottom Section -->
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 12px;">
+            <p style="margin: 0; color: rgba(255, 255, 255, 0.6);">&copy; 2026 جميع الحقوق محفوظة لمنصة <span lang="en" style="color: #FF6B35; font-weight: 900;">My Order</span></p>
+            
+            <div style="display: flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.6); flex-wrap: wrap; justify-content: center;">
+                <span>👨‍💻 طوّره:</span>
+                <a href="https://www.instagram.com/ibra7im_mo7amad?igsh=N3oyZWxubDA2YTYw" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: 900; transition: all 0.3s;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Ibrahim Mohamed</a>
+                <span>|</span>
+                <span>📧 <span lang="en">ibra7im.engineer@gmail.com</span></span>
+            </div>
+
+            <p style="margin: 0; color: rgba(255, 255, 255, 0.6); text-align: right;">✨ جودة 5 نجوم | ⚡ سرعة عالية | 🔐 أمان مضمون</p>
+        </div>
+    </footer>
+
+    <!-- Image Modal for Enhanced Image Viewing -->
+    <div id="image-modal" class="image-modal" role="dialog" aria-labelledby="image-modal-img" aria-modal="true" aria-hidden="true">
+        <div class="image-modal-backdrop" onclick="closeImageModal()" aria-label="إغلاق"></div>
+        <div class="image-modal-content">
+            <button class="image-modal-close" onclick="closeImageModal()" aria-label="إغلاق الصورة" type="button">×</button>
+            <img id="image-modal-img" src="" alt="عرض الصورة بحجم كامل">
+            <p id="image-modal-caption"></p>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay" aria-hidden="true">
+        <div class="spinner"></div>
+        <p>جاري التحميل...</p>
+    </div>
+
+    <!-- Scripts with defer for better performance -->
+    <script defer src="firebase-config.js"></script>
+    <script defer src="script.js"></script>
+    <script defer src="db-seed.js"></script>
+    
+    <!-- Service Worker for PWA support -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').catch(() => {});
+        }
+    </script>
+</body>
+</html>
